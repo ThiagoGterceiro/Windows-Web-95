@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sites dos Alunos - Windows 95</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./src/css/hotbar.css" rel="stylesheet">
+  <link href="./src/css/padrão.css" rel="stylesheet">
+  <link href="./src/css/index.css" rel="stylesheet">
+</head>
+<body>
+  
+  <div class="container">
+    <div class="title-bar">Sites dos Alunos</div>
+    <p>Bem-vindo à lista de sites desenvolvidos pelos alunos! Clique no botão correspondente para acessar o site de cada um.</p>
+
+    <div class="row">
+      <!-- Aluno 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="student-card">
+          <img src="./src/img/transcender.png" alt="Foto do site Transcender" class="site-photo">
+          <div class="welcome-card"></div> <!-- Cartão de boas-vindas -->
+          <h5>Thiago Guimarães</h5>
+          <p>Site focado em dar apoio à comunidade LGBTQIAPN+, com notícias, documentos e artistas.</p>
+          <p class="student-info"><strong>Nome do site:</strong> Transcender</p>
+          <a href="https://thiagogterceiro.github.io/Transcender/" class="button-95">Acessar</a>
+        </div>
+      </div>
+
+      <!-- Aluno 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="student-card">
+          <img src="./src/img/foto-site2.jpg" alt="Foto do site 2" class="site-photo">
+          <div class="welcome-card"></div> <!-- Cartão de boas-vindas -->
+          <h5>Nome do Aluno 2</h5>
+          <p>Descrição breve do site do aluno.</p>
+          <p class="student-info"><strong>Nome do site:</strong> Nome do Site 2</p>
+          <a href="site-aluno2.html" class="button-95">Acessar</a>
+        </div>
+      </div>
+
+      <!-- Aluno 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="student-card">
+          <img src="./src/img/foto-site3.jpg" alt="Foto do site 3" class="site-photo">
+          <div class="welcome-card"></div> <!-- Cartão de boas-vindas -->
+          <h5>Nome do Aluno 3</h5>
+          <p>Descrição breve do site do aluno.</p>
+          <p class="student-info"><strong>Nome do site:</strong> Nome do Site 3</p>
+          <a href="site-aluno3.html" class="button-95">Acessar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Barra Inferior - Hotbar -->
+  <div class="hotbar">
+    <div class="start-button">
+      <img src="./src/img/iniciar.png" alt="Ícone do Windows" class="start-icon">
+      <span>Iniciar</span>
+    </div>
+    <div class="hotbar-content">
+      <span>Sites dos Alunos - Windows 95</span>
+    </div>
+    <div class="hotbar-info">
+      <span id="clock">00:00</span>
+    </div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const clock = document.getElementById("clock");
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, "0");
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      clock.textContent = `${hours}:${minutes}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock(); // Atualiza imediatamente ao carregar
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
