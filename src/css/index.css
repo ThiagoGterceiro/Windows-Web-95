@@ -1,0 +1,35 @@
+.student-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    background-color: #FFF;
+    border: 2px solid #808080;
+    box-shadow: 2px 2px #404040, -2px -2px #FFFFFF;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+.site-photo {
+    width: 100%; /* A foto vai ocupar 100% do espaço disponível */
+    max-width: 500px; /* Limita o tamanho máximo da foto */
+    max-height: 500px; /* Limita a altura máxima da foto */
+    border-radius: 5px; /* Arredonda levemente as bordas */
+    object-fit: cover; /* A imagem vai cobrir a área sem distorcer */
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transições suaves */
+}
+
+.student-card:hover {
+    transform: scale(1.05); /* Efeito de zoom */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Aumento da sombra */
+}
+
+.site-photo:hover {
+    transform: scale(1.1); /* Efeito de zoom na foto */
+    opacity: 0.8; /* Diminui a opacidade da imagem ao passar o mouse */
+}
+
+.student-info {
+    margin-top: 10px;
+}
