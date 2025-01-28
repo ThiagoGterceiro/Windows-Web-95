@@ -10,10 +10,21 @@
   <link href="./src/css/padrão.css" rel="stylesheet">
   <link href="./src/css/index.css" rel="stylesheet">
 </head>
+    <style> 
+     @font-face {
+        font-family: 'WindowsRegular';
+        src: url('./src/font/Windows\ Regular.ttf') format('truetype');
+      }
+  
+      /* Aplicando a fonte no corpo e elementos gerais */
+      body, div, h5, p, span, a {
+        font-family: 'WindowsRegular', sans-serif;
+      }</style>
 <body>
   
   <div class="container">
     <div class="title-bar">Sites dos Alunos</div>
+    <p></p>
     <p>Bem-vindo à lista de sites desenvolvidos pelos alunos! Clique no botão correspondente para acessar o site de cada um.</p>
 
     <div class="row">
@@ -79,6 +90,7 @@
     }
     setInterval(updateClock, 1000);
     updateClock(); // Atualiza imediatamente ao carregar
+    
   </script>
 
   <!-- Bootstrap JS -->
