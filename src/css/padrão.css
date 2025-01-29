@@ -1,50 +1,19 @@
-    /* Importando a fonte Windows Regular */
-    @font-face {
-        font-family: 'WindowsRegular';
-        src: url('./src/font/Windows\ Regular.ttf') format('truetype');
-      }
-  
-      /* Aplicando a fonte no corpo e elementos gerais */
-      body, div, h5, p, span, a {
-        font-family: 'WindowsRegular', sans-serif;
-      }
-  
-      /* Estilo geral do layout */
-      body {
-        background-color: #008080; /* Fundo clássico do Windows 95 */
-        color: #000;
-        margin: 0;
-        padding: 0;
-      }
-  
-      .container {
-        background: #C0C0C0; /* Fundo de janela do Windows 95 */
-        border: 2px solid #808080; /* Borda da janela */
-        border-radius: 5px;
-        box-shadow: 3px 3px #404040, -2px -2px #FFFFFF; /* Efeito de relevo */
-        padding: 20px;
-        margin-top: 20px;
-      }
-  
-      .title-bar {
-        background: linear-gradient(to bottom, #000080, #0000A0); /* Barra azul típica */
-        color: #FFF;
-        padding: 5px 10px;
-        font-size: 1.2em;
-        text-align: center;
-        border-bottom: 2px solid #404040; /* Linha separadora */
-      }
-  
-      .button-95 {
-        background-color: #C0C0C0;
-        border: 2px solid #808080;
-        padding: 5px 10px;
-        color: #000;
-        box-shadow: 2px 2px #FFFFFF, -1px -1px #404040; /* Efeito 3D */
-        cursor: pointer;
-        text-decoration: none;
-      }
-  
-      .button-95:hover {
-        background-color: #A0A0A0;
-      }
+@font-face {
+  font-family: 'WindowsRegular';
+  src: url('../font/Windows\ Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: 'WindowsRegular', sans-serif;
+  background-color: #008080;
+  color: #000;
+  margin: 0;
+  padding: 0;
+ 
+  width: 1280px; /* Largura fixa */
+  height: 800px; /* Altura fixa */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Impede que a página tenha barras de rolagem */
+
+}
