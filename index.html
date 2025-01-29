@@ -14,27 +14,33 @@
   <link rel="manifest" href="./src/img/favicon/site.webmanifest">
 </head>
 <body>
-  <!-- Ícone na Área de Trabalho -->
+  <!--Área de Trabalho -->
   <a href="https://github.com/ThiagoGterceiro/Windows-Web-95" target="_blank" >
   <div class="desktop-icon">  
     <img src="./src/img/computer_2_cool-4.png" alt="Ícone do Computador" class="desktop-icon-img">
    <span class="icon-label">Computador</span>
   </div>
   </a>
+  <a href="https://github.com/ThiagoGterceiro" target="_blank" >
+    <div class="desktop-icon">  
+      <img src="./src/img/github-icon.png" alt="Ícone do Computador" class="desktop-icon-img">
+     <span class="icon-label">GitHub</span>
+    </div>
+    </a>
 
-  <!-- Janela Principal -->
-  <div class="window" id="janela1">
+  <!-- Janela para colocar o sites -->
+  <div class="window" id="alunosSite">
       <div class="title-bar" id="titulo1">
           <span>Sites dos Alunos</span>
           <div>
-              <button onclick="minimizar('janela1')">_</button>
-              <button onclick="fechar('janela1')">X</button>
+              <button onclick="minimizar('alunosSite')">_</button>
+              <button onclick="fechar('alunosSite')">X</button>
           </div>
       </div>
       <div class="content" id="conteudo1">
           <p>Bem-vindo à lista de sites desenvolvidos pelos alunos do curso de Sistemas para Internet do IFAC - 2° periodo de 2025!</p>
           <div class="row">
-              <!-- Cartão do primeiro site -->
+              <!-- Card com as informacao do site -->
               <div class="col-12 col-sm-6 col-md-4 mb-4">
                   <div class="student-card">
                     <img src="./src/img/transcender.png" alt="Foto do site Transcender" class="site-photo">
@@ -45,18 +51,16 @@
                   </div>
               </div>
 
-              <!-- Cartão do segundo site -->
               <div class="col-12 col-sm-6 col-md-4 mb-4">
                   <div class="student-card">
-                    <img src="./src/img/segundo-site.png" alt="Foto do site Segundo Site" class="site-photo">
-                    <h5>Ana Julia</h5>
+                    <img src="./src/img/aphibians.png" alt="Foto do site Segundo Site" class="site-photo">
+                    <h5>Anna Julia</h5>
                     <p>Site focado em promover o informações sobre anfibios.</p>
-                    <p class="student-info"><strong>Nome do site:</strong> Anphibans </p>
-                    <a href="https://mariasouza.github.io/programacao-para-todos/" class="button-95">Acessar</a>
+                    <p class="student-info"><strong>Nome do site:</strong> Amphibians </p>
+                    <a href="https://julia-alt-0w0.github.io/Amphibians/index.html" class="button-95">Acessar</a>
                   </div>
               </div>
 
-              <!-- Cartão do terceiro site -->
               <div class="col-12 col-sm-6 col-md-4 mb-4">
                   <div class="student-card">
                     <img src="./src/img/terceiro-site.png" alt="Foto do site Terceiro Site" class="site-photo">
@@ -70,7 +74,7 @@
       </div>
   </div>
 
-  <!-- Hotbar -->
+  <!-- Hotbar do windows -->
   <div class="hotbar">
     <div class="start-button">
         <img src="./src/img/iniciar.png" alt="Iniciar" class="start-icon">
@@ -84,8 +88,9 @@
         </div>
     </div>
     <div class="hotbar-windows">
-      <button onclick="restaurar('janela1')">
-        <img src="./src/img/cmd.png" alt="Janela 1" class="window-icon"> Janela 1
+        <!-- Onde colocar as abas -->
+      <button onclick="restaurar('alunosSite')">
+        <img src="./src/img/cmd.png" alt="Site dos alunos" class="window-icon"> Site dos alunos
       </button>
     </div>
     <div class="hotbar-info">
@@ -93,7 +98,7 @@
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- Importação do java Scripts -->
   <script src="./src/js/script.js"></script>
 </body>
 </html>
