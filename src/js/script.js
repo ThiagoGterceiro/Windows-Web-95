@@ -1,3 +1,4 @@
+//EVITAR MEXER 
 function fechar(id) {
     const janela = document.getElementById(id);
     janela.style.display = 'none';
@@ -26,7 +27,7 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
-// Arrastar janelas
+// Arrastar janelas EVITAR MEXER
 let isDragging = false;
 let offsetX = 0;
 let offsetY = 0;
@@ -55,24 +56,21 @@ function dragWindow(e) {
     }
 }
 
-// Função que termina o movimento
 function stopDrag() {
     isDragging = false;
     titleBar.style.cursor = 'default';
 }
 
-// Adiciona os ouvintes de eventos de mouse
 titleBar.addEventListener('mousedown', startDrag);
 document.addEventListener('mousemove', dragWindow);
 document.addEventListener('mouseup', stopDrag);
 
-// Adiciona os ouvintes de eventos de toque
 titleBar.addEventListener('touchstart', startDrag);
 document.addEventListener('touchmove', dragWindow);
 document.addEventListener('touchend', stopDrag);
 
 
-// dropbar
+// DROPDOWNS soq pracima
 
 document.querySelector('.start-button').addEventListener('click', function(event) {
     event.stopPropagation();
