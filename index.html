@@ -14,96 +14,101 @@
   <link rel="manifest" href="./src/img/favicon/site.webmanifest">
 </head>
 <body>
-  <!--Área de Trabalho -->
-  <a href="https://github.com/ThiagoGterceiro/Windows-Web-95" target="_blank" >
-  <div class="desktop-icon">  
-    <img src="./src/img/computer_2_cool-4.png" alt="Ícone do Computador" class="desktop-icon-img">
-   <span class="icon-label">Computador</span> </a>
-  </div>
- 
-  <a href="https://github.com/ThiagoGterceiro" target="_blank" >
+  <section class="screen">
+    <!--Área de Trabalho -->
+    <a href="https://github.com/ThiagoGterceiro/Windows-Web-95" target="_blank" >
     <div class="desktop-icon">  
-      <img src="./src/img/github-icon.png" alt="Ícone do Computador" class="desktop-icon-img">
-     <span class="icon-label">GitHub</span></a>
+      <img src="./src/img/computer_2_cool-4.png" alt="Ícone do Computador" class="desktop-icon-img">
+    <span class="icon-label">Computador</span> </a>
     </div>
   
-  <div class="desktop-icon" onclick="alternarWallpaper()">
-    <div class="wallpaper-icon">
-      <span><img src="./src/img/icone_galeria.png" alt="Ícone de alternar wallpaper" class="desktop-icon-img">Wallpaper</span>
+    <a href="https://github.com/ThiagoGterceiro" target="_blank" >
+      <div class="desktop-icon">  
+        <img src="./src/img/github-icon.png" alt="Ícone do Computador" class="desktop-icon-img">
+      <span class="icon-label">GitHub</span></a>
+      </div>
+    
+    <div class="desktop-icon" onclick="alternarWallpaper()">
+      <div class="wallpaper-icon">
+        <span class="icon-label"><img src="./src/img/icone_galeria.png" alt="Ícone de alternar wallpaper" class="desktop-icon-img">Wallpaper</span>
+      </div>
     </div>
-  </div>
 
-  <!-- Janela para colocar o sites -->
-  <div class="window" id="alunosSite">
-      <div class="title-bar" id="titulo1">
-          <span>Sites dos Alunos</span>
-          <div>
-              <button onclick="minimizar('alunosSite')" >_</button>
-              <button style="background-color: rgb(247, 9, 9);" onclick="fechar('alunosSite')">X</button>
+    <!-- Janela para colocar o sites -->
+    <div class="window" id="alunosSite">
+        <div class="title-bar" id="titulo1">
+            <span>Sites dos Alunos</span>
+            <div>
+                <button onclick="minimizar('alunosSite')" >_</button>
+                <button style="background-color: rgb(247, 9, 9);" onclick="fechar('alunosSite')">X</button>
+              </div>
+        </div>
+        <div class="content" id="conteudo1">
+            <p>Bem-vindo à lista de sites desenvolvidos pelos alunos do curso de Sistemas para Internet do IFAC - 2° periodo de 2025!</p>
+            <div class="row">
+                <!-- Card com as informacao do site -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="student-card">
+                      <img src="./src/img/transcender.png" alt="Foto do site Transcender" class="site-photo">
+                      <h5>Thiago Guimarães</h5>
+                      <p>Site focado em dar apoio à comunidade LGBTQIAPN+, com notícias, documentos e artistas.</p>
+                      <p class="student-info"><strong>Nome do site:</strong> Transcender</p>
+                      <a href="https://thiagogterceiro.github.io/Transcender/" class="button-95">Acessar</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="student-card">
+                      <img src="./src/img/aphibians.png" alt="Foto do site Segundo Site" class="site-photo">
+                      <h5>Anna Julia</h5>
+                      <p>Site focado em promover informações sobre os anfibios.</p>
+                      <p class="student-info"><strong>Nome do site:</strong> Amphibians </p>
+                      <a href="https://julia-alt-0w0.github.io/Amphibians/index.html" class="button-95">Acessar</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="student-card">
+                      <img src="./src/img/excomungados.png" alt="Foto do site Terceiro Site" class="site-photo">
+                      <h5>Lucas Alefe</h5>
+                      <p>Site dedicado a banda Excomungados.</p>
+                      <p class="student-info"><strong>Nome do site:</strong> Excomungados</p>
+                      <a href="https://luqalefe.github.io/excomungado-web/" class="button-95">Acessar</a>
+                    </div>
+                </div>
             </div>
-      </div>
-      <div class="content" id="conteudo1">
-          <p>Bem-vindo à lista de sites desenvolvidos pelos alunos do curso de Sistemas para Internet do IFAC - 2° periodo de 2025!</p>
-          <div class="row">
-              <!-- Card com as informacao do site -->
-              <div class="col-12 col-sm-6 col-md-4 mb-4">
-                  <div class="student-card">
-                    <img src="./src/img/transcender.png" alt="Foto do site Transcender" class="site-photo">
-                    <h5>Thiago Guimarães</h5>
-                    <p>Site focado em dar apoio à comunidade LGBTQIAPN+, com notícias, documentos e artistas.</p>
-                    <p class="student-info"><strong>Nome do site:</strong> Transcender</p>
-                    <a href="https://thiagogterceiro.github.io/Transcender/" class="button-95">Acessar</a>
-                  </div>
-              </div>
-
-              <div class="col-12 col-sm-6 col-md-4 mb-4">
-                  <div class="student-card">
-                    <img src="./src/img/aphibians.png" alt="Foto do site Segundo Site" class="site-photo">
-                    <h5>Anna Julia</h5>
-                    <p>Site focado em promover o informações sobre anfibios.</p>
-                    <p class="student-info"><strong>Nome do site:</strong> Amphibians </p>
-                    <a href="https://julia-alt-0w0.github.io/Amphibians/index.html" class="button-95">Acessar</a>
-                  </div>
-              </div>
-
-              <div class="col-12 col-sm-6 col-md-4 mb-4">
-                  <div class="student-card">
-                    <img src="./src/img/excomungados.png" alt="Foto do site Terceiro Site" class="site-photo">
-                    <h5>Lucas Alefe</h5>
-                    <p>Site dedicado a banda Excomungados.</p>
-                    <p class="student-info"><strong>Nome do site:</strong> Excomungados</p>
-                    <a href="https://luqalefe.github.io/excomungado-web/" class="button-95">Acessar</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <!-- Hotbar do windows -->
-  <div class="hotbar">
-    <div class="start-button">
-        <img src="./src/img/iniciar.png" alt="Iniciar" class="start-icon">
-        <span>Iniciar</span>
-        <div class="dropbar">
-          <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-          </ul>
         </div>
     </div>
-    <div class="hotbar-windows">
-        <!-- Onde colocar as abas -->
-      <button onclick="restaurar('alunosSite')">
-        <img src="./src/img/cmd.png" alt="Site dos alunos" class="window-icon"> Site dos alunos
-      </button>
-    </div>
-    <div class="hotbar-info">
-        <span id="clock">00:00</span>
-    </div>
-  </div>
 
-  <!-- Importação do java Scripts -->
-  <script src="./src/js/script.js"></script>
+    <!-- Hotbar do windows -->
+    <div class="hotbar">
+      <div class="start-button">
+          <img src="./src/img/iniciar.png" alt="Iniciar" class="start-icon">
+          <span>Iniciar</span>
+          <div class="dropbar">
+            <ul>
+              <li><a href="#">Bloco de Notas</a></li>
+              <li><a href="#">Calculadora</a></li>
+              <li><a href="#">Explorador de Arquivos</a></li>
+              <li><a href="#">Paint</a></li>
+              <li><a href="#">Meu Computador</a></li>
+              <li><a href="#">Configurações</a></li>
+              <li><a href="#"> <img src="./src/img/icone_botao_desligar.png " style="width: 30%; height: auto;" alt="Desligar" class="start-icon">Desligar</a></li>
+            </ul>
+          </div> 
+      </div>
+      <div class="hotbar-windows">
+          <!-- Onde colocar as abas -->
+        <button onclick="restaurar('alunosSite')">
+          <img src="./src/img/cmd.png" alt="Site dos alunos" class="window-icon"> Site dos alunos
+        </button>
+      </div>
+      <div class="hotbar-info">
+          <span id="clock">00:00</span>
+      </div>
+    </div>
+  </section>
+    <!-- Importação do java Scripts -->
+    <script src="./src/js/script.js"></script>
 </body>
 </html>

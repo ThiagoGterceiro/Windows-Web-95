@@ -142,7 +142,7 @@
   width: 80px;
   height: 100px;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -164,10 +164,26 @@
 
 .icon-label {
   margin-top: 5px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'WindowsRegular', sans-serif;
   color: #000;
 }
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
 
 /* Ajuste responsivo dos ícones */
 @media (max-width: 768px) {
@@ -227,3 +243,5 @@
     max-width: 100%;
   }
 }
+
+

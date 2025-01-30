@@ -35,16 +35,15 @@ let offsetY = 0;
 const titleBar = document.querySelector('.title-bar');
 const windowElement = document.querySelector('.window');
 
-// Função que começa o movimento com o mouse
 function startDrag(e) {
     isDragging = true;
-    // Ajusta para tocar (touch) ou mouse (mouse)
+
     offsetX = e.clientX ? e.clientX - windowElement.getBoundingClientRect().left : e.touches[0].clientX - windowElement.getBoundingClientRect().left;
     offsetY = e.clientY ? e.clientY - windowElement.getBoundingClientRect().top : e.touches[0].clientY - windowElement.getBoundingClientRect().top;
     titleBar.style.cursor = 'move';
 }
 
-// Função que arrasta a janela
+// a função com responsividade arrastar a janelas
 function dragWindow(e) {
     if (isDragging) {
         const left = (e.clientX ? e.clientX : e.touches[0].clientX) - offsetX;
@@ -78,25 +77,39 @@ document.querySelector('.start-button').addEventListener('click', function(event
     this.classList.toggle('active');
   });
   
-  // Fecha o menu se o clique for fora do botão "Iniciar"
   document.addEventListener('click', function(event) {
     if (!event.target.closest('.start-button')) {
       document.querySelector('.start-button').classList.remove('active');
     }
   });
   
+  // wallpaper - ja responsivo
   let alternado = false;
-
+  let wallpapers = [
+    './src/img/wallpaper95.png',
+    './src/img/monkerynirvana.jpg',
+    './src/img/wallpaper_paper_95.png',
+    './src/img/dog_win.png'
+  ];
+  let currentWallpaperIndex = 0;  
+  
   function alternarWallpaper() {
     if (alternado) {
-      // Se o fundo já foi alterado, retorna para o fundo branco
-      document.body.style.backgroundColor = '#008080';  // Cor de fundo original
-      document.body.style.backgroundImage = "";  // Remove a imagem de fundo
+      document.body.style.backgroundColor = '#008080';  
+      document.body.style.backgroundImage = "";  
+      document.body.style.height = "";  
       alternado = false;
     } else {
-      // Se o fundo não foi alterado, aplica a imagem de fundo
-      document.body.style.backgroundImage = "url('./src/img/wallpaper95.png')";
-      document.body.style.backgroundSize = "cover";  // Faz a imagem cobrir toda a tela
+
+      document.body.style.backgroundImage = `url('${wallpapers[currentWallpaperIndex]}')`;
+      document.body.style.backgroundSize = "cover";  
+      document.body.style.backgroundPosition = "center";  
+      document.body.style.backgroundRepeat = "no-repeat";  
+      document.body.style.height = "100vh";  
+  
+      currentWallpaperIndex = (currentWallpaperIndex + 1) % wallpapers.length;
+      
       alternado = true;
     }
   }
+  
