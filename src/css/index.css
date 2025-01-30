@@ -26,6 +26,9 @@
   justify-content: space-between;
   align-items: center;
   cursor: move;
+  position: sticky;
+  top: 0; 
+  z-index: 10; 
 }
 
 .title-bar-buttons button {
@@ -35,6 +38,34 @@
   border: 1px solid #808080;
   box-shadow: 2px 2px #FFFFFF, -1px -1px #404040;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px; /* Adiciona um pouco de espaço interno */
+}
+
+.title-bar div {
+  display: flex;
+  gap: 5px; /* Dá um espaçamento entre os botões */
+}
+
+.title-bar button {
+  width: 25px; /* Aumenta um pouco o tamanho */
+  height: 25px;
+  background: #C0C0C0;
+  border: 1px solid #808080;
+  box-shadow: 2px 2px #FFFFFF, -1px -1px #404040;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-bar button:hover {
+  background: #A0A0A0;
+  border-color: #606060;
+  box-shadow: inset 2px 2px #404040, inset -1px -1px #FFFFFF;
 }
 
 .content {

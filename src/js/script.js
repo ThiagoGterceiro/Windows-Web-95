@@ -85,3 +85,18 @@ document.querySelector('.start-button').addEventListener('click', function(event
     }
   });
   
+  let alternado = false;
+
+  function alternarWallpaper() {
+    if (alternado) {
+      // Se o fundo já foi alterado, retorna para o fundo branco
+      document.body.style.backgroundColor = '#008080';  // Cor de fundo original
+      document.body.style.backgroundImage = "";  // Remove a imagem de fundo
+      alternado = false;
+    } else {
+      // Se o fundo não foi alterado, aplica a imagem de fundo
+      document.body.style.backgroundImage = "url('./src/img/wallpaper95.png')";
+      document.body.style.backgroundSize = "cover";  // Faz a imagem cobrir toda a tela
+      alternado = true;
+    }
+  }
