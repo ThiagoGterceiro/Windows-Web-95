@@ -8,8 +8,8 @@ body {
   background-color: #008080;
   color: #000;
   margin: 0;
+  cursor: url('../img/mouse/handno-ezgif.com-ani-to-apng-converter.cur'), auto;
   padding: 0;
-  cursor: url('../img/cursor.cur'), auto;
   width: 1280px; /* Largura fixa */
   height: 800px; /* Altura fixa */
   margin: 0;

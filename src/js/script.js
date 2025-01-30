@@ -40,7 +40,7 @@ function startDrag(e) {
 
     offsetX = e.clientX ? e.clientX - windowElement.getBoundingClientRect().left : e.touches[0].clientX - windowElement.getBoundingClientRect().left;
     offsetY = e.clientY ? e.clientY - windowElement.getBoundingClientRect().top : e.touches[0].clientY - windowElement.getBoundingClientRect().top;
-    titleBar.style.cursor = 'move';
+    titleBar.style.cursor = '../img/mouse/hmove.cur';
 }
 
 // a função com responsividade arrastar a janelas
@@ -57,7 +57,7 @@ function dragWindow(e) {
 
 function stopDrag() {
     isDragging = false;
-    titleBar.style.cursor = 'default';
+    titleBar.style.cursor = '../img/mouse/hmove.cur';
 }
 
 titleBar.addEventListener('mousedown', startDrag);

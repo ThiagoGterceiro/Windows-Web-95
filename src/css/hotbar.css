@@ -12,6 +12,8 @@
   left: 0;
   right: 0;
   z-index: 1000;
+  cursor: url('../img/mouse/handno-ezgif.com-ani-to-apng-converter.cur'), auto;
+
 }
 
 .hotbar-windows {
@@ -26,7 +28,7 @@
   border: 2px solid #808080;
   padding: 5px 10px;
   box-shadow: inset 1px 1px #FFF, inset -1px -1px #404040;
-  cursor: pointer;
+  cursor: url('../img/mouse/harrow.cur'), auto;
   font-size: 14px;
   white-space: nowrap;
 }
@@ -43,12 +45,14 @@
   border: 2px solid #808080;
   padding: 3px 10px;
   border-radius: 2px;
-  cursor: pointer;
+  cursor: url('../img/mouse/harrow.cur'), auto;
   box-shadow: inset 1px 1px #FFF, inset -1px -1px #404040;
 }
 
 .start-button:hover {
   background-color: #A0A0A0;
+  cursor: url('../img/mouse/harrow.cur'), auto;
+
 }
 
 .start-icon {
