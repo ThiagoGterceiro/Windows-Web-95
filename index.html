@@ -8,6 +8,9 @@
   <link href="./src/css/padrão.css" rel="stylesheet">
   <link href="./src/css/hotbar.css" rel="stylesheet">
   <link href="./src/css/index.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./src/css/assistente.css"> 
+
   <link rel="apple-touch-icon" sizes="180x180" href="./src/img/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./src/img/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./src/img/favicon/favicon-16x16.png">
@@ -24,7 +27,7 @@
     <a href="https://github.com/ThiagoGterceiro" target="_blank" >
       <div class="desktop-icon">  
         <img src="./src/img/github-icon.png" alt="Ícone do Computador" class="desktop-icon-img">
-      <span class="icon-label">GitHub</span></a>
+      <span class="icon-label">GitHub.exe</span></a>
       </div>
     
     <div class="desktop-icon" onclick="alternarWallpaper()">
@@ -35,7 +38,7 @@
 
     <div class="desktop-icon" onclick="restaurar('alunosSite')">
       <div class="wallpaper-icon">
-        <span class="icon-label" ><img src="./src/img/sites.png" alt="Ícone de sites" class="desktop-icon-img">Sites Alunos</span>
+        <span class="icon-label" ><img src="./src/img/sites.png" alt="Ícone de sites" class="desktop-icon-img">Sites.exe</span>
       </div>
     </div>
 
@@ -43,8 +46,47 @@
 <div class="desktop-icon" onclick="abrirPasta()">
   <div class="folder-icon">
       <img src="./src/img/iconepasta.png" alt="Ícone da Pasta" class="desktop-icon-img">
-      <span class="icon-label">asadsda</span>
+      <span class="icon-label">Pasta</span>
   </div>
+</div>
+
+<div class="desktop-icon" onclick="alternarAssistente()">
+  <div class="assistant-icon">
+    <span class="icon-label">
+      <img src="./src/img/clippy.png" alt="Ícone do Assistente" class="desktop-icon-img">
+      Clipizinho.exe
+    </span>
+  </div>
+</div>
+
+<div class="desktop-icon" onclick="abrirLixeira()">
+  <div class="trash-icon">
+    <span class="icon-label">
+      <img src="./src/img/lixeira.png" alt="Ícone da Lixeira" class="desktop-icon-img">Lixeira
+    </span>
+  </div>
+</div>
+
+<div class="window" id="trashWindow" style="display: none; width: 600px; height: 400px;">
+  <div class="title-bar">
+    <span>Lixeira</span>
+    <button style="background-color: rgb(247, 9, 9);" onclick="fechar('trashWindow')">X</button>
+  </div>
+  <div class="window-content" id="trashContent">
+    <div class="desktop-icon">
+      <img src="./src/img/txticon.png" alt="Ícone de Texto.txt" class="desktop-icon-img">
+      <span class="icon-label">Texto.txt</span>
+    </div>   
+    <div class="desktop-icon">
+      <img src="./src/img/Doom (classic).png" alt="Ícone de Texto.txt" class="desktop-icon-img">
+      <span class="icon-label" style="font-size: small;">Doom_<bR>Sem_Virus.exe</span>
+    </div>   
+    <div class="desktop-icon" >
+      <img src="./src/img/virus.png" style="width: 70%;"alt="Ícone de Texto.txt" class="desktop-icon-img">
+      <span class="icon-label"style="font-size: small;">virus_<br>maligno.exe</span>
+    </div>      
+  </div>
+  <button onclick="limparLixeira()">Limpar Lixeira</button>
 </div>
 
 <!-- Janela da pasta (inicialmente oculta) -->
@@ -83,7 +125,7 @@
       <span>Windows Media Player</span>
       <div>
         <button onclick="minimizar('musicPlayerWindow')">_</button>
-        <button style="background-color: rgb(247, 9, 9);" onclick="fechar('musicPlayerWindow')">X</button>
+        <button style="background-color: rgb(247, 9, 9);" onclick="fechar('musicPlayerWindow'); fecharPlayerMusica();">X</button>
       </div>
   </div>
     <div class="content" style="text-align: center; padding: 10px;">
@@ -114,6 +156,14 @@
 
 </div>
 
+<div class="assistant" id="assistant">
+  <!-- A imagem do assistente vai mudar dinamicamente -->
+  <img id="assistant-img" src="./src/gif/clippy-white-12.gif" alt="Assistente Virtual">
+  <div class="speech-bubble" id="speech">
+      <p id="speech-text">Olá! Posso te ajudar com algo?</p>
+      <button onclick="nextMessage()">Próximo</button>
+  </div>
+</div>
 
 <!-- Janela do Bloco de Notas (inicialmente oculta) -->
 <div class="window" id="notepadWindow" style="display: none; width: 400px; height: 300px;">
@@ -201,8 +251,6 @@
       </div>
   </div>
 </div>
-
-
     <div class="window" id="infoWindow" style="display: none; width: 400px; height: 300px; background-color: #fff; border: 1px solid #000; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1000;">
       <div class="title-bar">
           <span>Informações do Sistema</span>
@@ -217,6 +265,48 @@
       </div>
   </div>
 
+<!-- Janela de configurações -->
+<div class="window" id="configWindow" style="display: none; width: 400px; height: 430px; ">
+  <div class="title-bar">
+      <span>Configurações</span>
+      <div>
+          <button onclick="fecharConfig()" style="background-color: rgb(247, 9, 9); color: white; border: none; padding: 5px; cursor: pointer;">X</button>
+      </div>
+  </div>
+  <div class="content" style="padding: 20px;">
+    <h5>Escolha as cores:</h5>
+    <label for="title-bar-color">Cor da barra da janela:</label>
+    <input type="color" id="title-bar-color" value="#0000A0">
+    <br>
+    <label for="window-color">Cor das Janelas:</label>
+    <input type="color" id="window-color" value="#C0C0C0">
+    <br>
+    <label for="font-color">Cor da Fonte:</label>
+    <input type="color" id="font-color" value="#000000">
+    <br>
+    <label for="font-family">Fonte:</label>
+    <select id="font-family">
+        <option value="WindowsRegular">WindowsRegular</option>
+        <option value="Comic Sans MS">Comic Sans MS</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Segoe UI">Segoe UI</option>
+    </select>
+    <br>
+    <label for="font-size">Tamanho da Fonte:</label>
+    <select id="font-size">
+        <option value="8px">8px</option>
+        <option value="12px">12px</option>
+        <option value="14px">14px</option>
+        <option value="16px">16px</option>
+        <option value="18px">18px</option>
+        <option value="20px">20px</option>
+    </select>
+    <br>
+    <button onclick="aplicarConfig()">Aplicar</button>
+  </div>  
+</div>
+
+
     <!-- Hotbar do windows -->
     <div class="hotbar">
       <div class="start-button">
@@ -227,7 +317,7 @@
               <li><a href="#" onclick="abrirPasta()"><img src="./src/img/documentos.png " style="width: 30%; height: auto;" alt="documentos" class="start-icon">Arquivos</a></li>
               <li><a href="#"onclick="mostrarInfo()"><img src="./src/img/meu computador.png " style="width: 30%; height: auto;" alt="Bloco de notas" class="start-icon">Meu Computador</a></li>
               <li><a href="#" onclick="abrirNotepad1()"><img src="./src/img/blocodenotas.png " style="width: 30%; height: auto;" alt="Bloco de notas" class="start-icon">Bloco de Notas</a></li>
-              <li><a href="#"><img src="./src/img/config.png " style="width: 30%; height: auto;" alt="Configurações" class="start-icon">Configurações</a></li>
+              <li><a href="#"onclick="mostrarConfig()"><img src="./src/img/config.png " style="width: 30%; height: auto;" alt="Configurações" class="start-icon">Configurações</a></li>
               <li><a href="#"onclick="desligarSistema()"> <img src="./src/img/icone_botao_desligar.png " style="width: 30%; height: auto;" alt="Desligar" class="start-icon">Desligar</a></li>
             </ul>
           </div> 
@@ -244,5 +334,7 @@
     </div>
     <!-- Importação do java Scripts -->
     <script src="./src/js/script.js"></script>
+    <script src="./src/js/assistente.js"></script>
+
 </body>
 </html>
