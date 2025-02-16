@@ -14,7 +14,6 @@
   <link rel="manifest" href="./src/img/favicon/site.webmanifest">
 </head>
 <body>
-  <section class="screen">
     <!--Área de Trabalho -->
     <a href="https://github.com/ThiagoGterceiro/Windows-Web-95" target="_blank" >
     <div class="desktop-icon">  
@@ -34,8 +33,122 @@
       </div>
     </div>
 
+    <div class="desktop-icon" onclick="restaurar('alunosSite')">
+      <div class="wallpaper-icon">
+        <span class="icon-label" ><img src="./src/img/sites.png" alt="Ícone de sites" class="desktop-icon-img">Sites Alunos</span>
+      </div>
+    </div>
+
+  <!-- Ícone da pasta -->
+<div class="desktop-icon" onclick="abrirPasta()">
+  <div class="folder-icon">
+      <img src="./src/img/iconepasta.png" alt="Ícone da Pasta" class="desktop-icon-img">
+      <span class="icon-label">asadsda</span>
+  </div>
+</div>
+
+<!-- Janela da pasta (inicialmente oculta) -->
+<div class="window"style="display: none; width: 600px; height: 400px;"  id="pastaWindow" style="display: none;">
+  <div class="title-bar" id="titulo1">
+      <span>Pasta de Arquivos</span>
+      
+      <div>
+        <button onclick="minimizar('pastaWindow')" >_</button>
+        <button style="background-color: rgb(247, 9, 9);" onclick="fechar('pastaWindow')">X</button>
+      </div>
+  </div>
+  <div class="content-pasta">
+      <div class="desktop-icon">
+        <a href="./banda.html" target="_blank" >
+          <img src="./src/img/bandaicon.png" alt="Ícone de Arquivo Corrompido" class="desktop-icon-img">
+          <span class="icon-label" style="font-size: small;">A̠̣̔͗͛̇͟rͥ̎͏̰̤q̘͕̻͓͍͑̕uͣ̿͏̖̻ǐ̳̰ͬͯ̕v̞̠͍̖́̚o̢͔͇͔͙ͤ̒ͅͅ???</span></a>
+      </div>
+
+      <div class="desktop-icon" onclick="abrirNotepad()">
+        <img src="./src/img/txticon.png" alt="Ícone de Daruek.txt" class="desktop-icon-img">
+        <span class="icon-label">Daruek.txt</span>
+    </div>    
+      
+      <div class="desktop-icon" onclick="abrirPlayerMusica()">
+        <img src="./src/img/musica icon.png" alt="Ícone de Música" class="desktop-icon-img">
+        <span class="icon-label" style="font-size: small;">Musica_<br>gratuita_<br>DVD<Br>AoVivo.mp3</span>
+    </div>
+    
+  </div>
+</div>
+
+<!--  Player de Música  -->
+<div class="window" id="musicPlayerWindow" style="display: none; width: 340px; height: 340px;">
+  <div class="title-bar" id="titulo1">
+      <span>Windows Media Player</span>
+      <div>
+        <button onclick="minimizar('musicPlayerWindow')">_</button>
+        <button style="background-color: rgb(247, 9, 9);" onclick="fechar('musicPlayerWindow')">X</button>
+      </div>
+  </div>
+    <div class="content" style="text-align: center; padding: 10px;">
+      <audio id="audioPlayer" src="./src/music/Iframe Mogno - Dark Side [GDCK_UZ-2fY].mp3"></audio>
+
+      <div style="margin-bottom: 10px;">
+          <img src="./src/img/album1.jpg" alt="Ícone da Música" id="musicIcon" style="width: 50px; height: 50px;">
+      </div>
+
+      <p style="font-weight: bold;">Musica_gratuita_DVDAoVivo.mp3</p>
+
+      <div>
+          <button onclick="playMusic()"> ▶ </button>
+          <button onclick="pauseMusic()"> ❚❚ </button>
+          <button onclick="stopMusic()"> ◼ </button>
+      </div>
+
+      <br>
+
+      <!-- Barra de progresso -->
+      <input type="range" id="progressBar" value="0" max="100" step="1" style="width: 80%;" onchange="seekMusic(this.value)">
+      <p id="currentTime">0:00 / 0:00</p>
+
+      <!-- Controle de Volume -->
+      <p>Volume</p>
+      <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" style="width: 80%;" onchange="setVolume(this.value)">
+  </div>
+
+</div>
+
+
+<!-- Janela do Bloco de Notas (inicialmente oculta) -->
+<div class="window" id="notepadWindow" style="display: none; width: 400px; height: 300px;">
+  <div class="title-bar" id="titulo1">
+      <span>Bloco de Notas - Daruek.txt</span>
+      <div>
+        <button onclick="minimizar('notepadWindow')">_</button>
+        <button style="background-color: rgb(247, 9, 9);" onclick="fechar('notepadWindow')">X</button>
+      </div>
+  </div>
+  <div class="content">
+      <textarea id="notepadContent" style="width: 100%; height: 100%; border: none; outline: none; background: #fff; padding: 10px;">
+      Porfavor n me processa por uso ilegal de direitos autorais 
+      </textarea>
+  </div>
+</div>
+
+<!-- Janela do Bloco de Notas (inicialmente oculta) -->
+<div class="window" id="notepadWindow1" style="display: none; width: 30vw; height: 50vh; position: fixed; top: 0; left: 0; z-index: 50;">
+  <div class="title-bar" id="titulo1" style="background-color: #333; color: white; padding: 10px; display: flex; justify-content: space-between; align-items: center;">
+      <span>Bloco de Notas</span>
+      <div>
+        <button onclick="minimizar('notepadWindow1')">_</button>
+        <button style="background-color: rgb(247, 9, 9);" onclick="fechar('notepadWindow1')">X</button>
+      </div>
+  </div>
+  <div class="content" style="display: flex; height: calc(100vh - 50px);">
+      <textarea id="notepadContent" style="width: 100%; height: 100%; border: none; outline: none; background: #fff; padding: 10px; box-sizing: border-box;"></textarea>
+  </div>
+</div>
+
+    
+
     <!-- Janela para colocar o sites -->
-    <div class="window" id="alunosSite">
+    <div class="window" id="alunosSite" style="display: none;">
         <div class="title-bar" id="titulo1">
             <span>Sites dos Alunos</span>
             <div>
@@ -80,6 +193,20 @@
         </div>
     </div>
 
+    <div class="window" id="infoWindow" style="display: none; width: 400px; height: 300px; background-color: #fff; border: 1px solid #000; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1000;">
+      <div class="title-bar">
+          <span>Informações do Sistema</span>
+          <div>
+              <button onclick="fecharInfo()" style="background-color: rgb(247, 9, 9); color: white; border: none; padding: 5px; cursor: pointer;">X</button>
+          </div>
+      </div>
+      <div class="content" style="padding: 20px;">
+          <p><strong>Navegador:</strong> <span id="navegador"></span></p>
+          <p><strong>Sistema Operacional:</strong> <span id="sistemaOperacional"></span></p>
+          <p><strong>Localização:</strong> <span id="localizacao"></span></p>
+      </div>
+  </div>
+
     <!-- Hotbar do windows -->
     <div class="hotbar">
       <div class="start-button">
@@ -87,13 +214,11 @@
           <span>Iniciar</span>
           <div class="dropbar">
             <ul>
-              <li><a href="#">Bloco de Notas</a></li>
-              <li><a href="#">Calculadora</a></li>
-              <li><a href="#">Explorador de Arquivos</a></li>
-              <li><a href="#">Paint</a></li>
-              <li><a href="#">Meu Computador</a></li>
-              <li><a href="#">Configurações</a></li>
-              <li><a href="#"> <img src="./src/img/icone_botao_desligar.png " style="width: 30%; height: auto;" alt="Desligar" class="start-icon">Desligar</a></li>
+              <li><a href="#" onclick="abrirPasta()"><img src="./src/img/documentos.png " style="width: 30%; height: auto;" alt="documentos" class="start-icon">Arquivos</a></li>
+              <li><a href="#"onclick="mostrarInfo()"><img src="./src/img/meu computador.png " style="width: 30%; height: auto;" alt="Bloco de notas" class="start-icon">Meu Computador</a></li>
+              <li><a href="#" onclick="abrirNotepad1()"><img src="./src/img/blocodenotas.png " style="width: 30%; height: auto;" alt="Bloco de notas" class="start-icon">Bloco de Notas</a></li>
+              <li><a href="#"><img src="./src/img/config.png " style="width: 30%; height: auto;" alt="Configurações" class="start-icon">Configurações</a></li>
+              <li><a href="#"onclick="desligarSistema()"> <img src="./src/img/icone_botao_desligar.png " style="width: 30%; height: auto;" alt="Desligar" class="start-icon">Desligar</a></li>
             </ul>
           </div> 
       </div>
@@ -107,7 +232,6 @@
           <span id="clock">00:00</span>
       </div>
     </div>
-  </section>
     <!-- Importação do java Scripts -->
     <script src="./src/js/script.js"></script>
 </body>

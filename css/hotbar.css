@@ -1,0 +1,131 @@
+
+
+.hotbar {
+  display: flex;
+  align-items: center;
+  background-color: #C0C0C0;
+  border-top: 2px solid #808080;
+  box-shadow: inset 2px 2px #FFFFFF, inset -2px -2px #404040;
+  padding: 5px 10px;
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  cursor: url('../img/mouse/handno-ezgif.com-ani-to-apng-converter.cur'), auto;
+
+}
+
+.hotbar-windows {
+  display: flex;
+  flex-grow: 1;
+  gap: 5px;
+  padding-left: 10px;
+}
+
+.hotbar-windows button {
+  background-color: #C0C0C0;
+  border: 2px solid #808080;
+  padding: 5px 10px;
+  box-shadow: inset 1px 1px #FFF, inset -1px -1px #404040;
+  cursor: url('../img/mouse/harrow.cur'), auto;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.hotbar-windows button:hover {
+  background-color: #A0A0A0;
+}
+
+.start-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #C0C0C0;
+  border: 2px solid #808080;
+  padding: 3px 10px;
+  border-radius: 2px;
+  cursor: url('../img/mouse/harrow.cur'), auto;
+  box-shadow: inset 1px 1px #FFF, inset -1px -1px #404040;
+}
+
+.start-button:hover {
+  background-color: #A0A0A0;
+  cursor: url('../img/mouse/harrow.cur'), auto;
+
+}
+
+.start-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.start-button {
+  position: relative;  
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.start-icon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+
+.start-button {
+  position: relative;  
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.start-icon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.dropbar {
+  display: none;  
+  position: absolute;
+  bottom: 100%; 
+  left: 0;
+  background-color: #C0C0C0;
+  border: 2px solid #808080;
+  border-radius: 5px;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2);  
+  z-index: 10;
+  width: 200px;  
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;  
+}
+
+.dropbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropbar li {
+  padding: 10px 15px;
+}
+
+.dropbar li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+  text-align: left;
+}
+
+.dropbar li a:hover {
+  background-color: #555;
+}
+
+.start-button.active .dropbar {
+  display: block;  
+  opacity: 1; 
+  transform: translateY(0);  
+}
