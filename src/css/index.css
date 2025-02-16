@@ -231,7 +231,6 @@ a:active {
   color: #0000A0;
   box-shadow: 2px 2px #FFFFFF, -1px -1px #404040;
   text-decoration: none;
-  z-index: 100;
 }
 
 .button-95:hover {
