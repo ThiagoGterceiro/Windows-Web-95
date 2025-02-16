@@ -30,7 +30,10 @@ const gifs = [
     './src/gif/clippy-white-3.gif',
     './src/gif/clippy-white-6.gif',
     './src/gif/clippy-white-20.gif',
-    './src/gif/clippy-white-21.gif'
+    './src/gif/clippy-white-21.gif',
+    './src/gif/clippy-white-23.gif',
+    './src/gif/clippy-white-19.gif',
+
 ];
 
 function loopGifsAleatorios() {
