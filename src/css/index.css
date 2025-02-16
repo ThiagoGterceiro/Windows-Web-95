@@ -1,16 +1,27 @@
-/* Estilos das janelas */
+:root {
+  --title-bar-color: linear-gradient(to bottom, #000080, #0000A0);
+  --window-color: #C0C0C0;
+  --font-color: #000000; 
+  --font-family: 'WindowsRegular'; 
+  --font-size: 14px; /* Tamanho da fonte padrão */
+
+  src: url('../font/Windows Regular.ttf') format('truetype'); 
+}
+
+
+
 .window {
   position: absolute;
-  width: 80%; /* Janela com 80% da largura da tela */
-  max-width: 1200px; /* Limita a largura máxima */
-  height: 70%; /* Janela ocupa 70% da altura da tela */
-  max-height: 600px; /* Limita a altura máxima */
-  background: #C0C0C0;
+  width: 80%; 
+  max-width: 1200px; 
+  height: 70%;
+  max-height: 600px; 
+  background: var(--window-color); /* Usando a variável para a cor da janela */
   border: 2px solid #808080;
   box-shadow: 3px 3px #404040, -2px -2px #FFFFFF;
   border-radius: 5px;
-  top: 10%; /* Posição inicial a 10% da altura da tela */
-  left: 10%; /* Posição inicial a 10% da largura da tela */
+  top: 10%; 
+  left: 10%; 
   text-align: center;
   display: block;
   visibility: visible;
@@ -18,9 +29,8 @@
   overflow-x: auto;
 }
 
-
 .title-bar {
-  background: linear-gradient(to bottom, #000080, #0000A0);
+  background:var(--title-bar-color);
   color: #FFF;
   padding: 5px;
   display: flex;
@@ -32,7 +42,6 @@
   z-index: 10; 
 }
 
-
 .title-bar div {
   display: flex;
   gap: 5px; 
@@ -41,7 +50,7 @@
 .title-bar button {
   width: 25px; 
   height: 25px;
-  background: #C0C0C0;
+  background: var(--window-color); /* Cor das janelas */
   border: 1px solid #808080;
   box-shadow: 2px 2px #FFFFFF, -1px -1px #404040;
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -63,17 +72,21 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Alinha os itens no centro */
+  align-items: center; 
+  font-size: var(--font-size);
+  color: var(--font-color); /* Mudando cor da fonte */
+  font-family: var(--font-family); /* Mudando fonte */
 }
+
 
 .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centraliza os cartões */
+  justify-content: center;
 }
 
 .col-md-4 {
-  flex: 1 1 300px; /* Ajuste para que as colunas se ajustem a diferentes larguras */
+  flex: 1 1 300px; 
   padding: 10px;
   display: flex;
   justify-content: center;
@@ -91,7 +104,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin: 10px;
   width: 100%;
-  max-width: 300px; /* Max-width para cartões maiores */
+  max-width: 300px; 
   box-sizing: border-box;
 }
 
@@ -168,8 +181,9 @@
 .icon-label {
   margin-top: 5px;
   font-size: 16px;
-  font-family: 'WindowsRegular', sans-serif;
-  color: #000;
+  font-family:  var(--font-family);
+  font-size: var(--font-size);
+  color: var(--font-color);
   cursor: url('../img/mouse/harrow.cur'), auto;
 
 }

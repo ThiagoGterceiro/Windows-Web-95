@@ -16,6 +16,14 @@ body {
   overflow: hidden; 
 }
 
+
+body, .student-card {
+  font-family: var(--font-family); /* Aplicando a fonte personalizada */
+  color: var(--font-color); /* Cor da fonte */
+  font-size: var(--font-size);
+}
+
+
 html{
   cursor: url('../img/mouse/handno-ezgif.com-ani-to-apng-converter.cur'), auto;
 

@@ -99,6 +99,8 @@ makeDraggable("musicPlayerWindow");
 makeDraggable("alunosSite");
 makeDraggable("pastaWindow");
 makeDraggable("infoWindow");
+makeDraggable("trashWindow");
+makeDraggable("configWindow");
 
 // DROPDOWNS soq pracima
 
@@ -153,8 +155,8 @@ document.querySelector('.start-button').addEventListener('click', function(event
 function abrirPasta() {
   const pastaWindow = document.getElementById('pastaWindow');
   pastaWindow.style.display = 'block';
-  pastaWindow.style.left = '50px'; // Ajuste a posição da janela da pasta
-  pastaWindow.style.top = '50px'; // Ajuste a posição da janela da pasta
+  pastaWindow.style.left = '50px'; 
+  pastaWindow.style.top = '50px'; 
 }
 
 function abrirNotepad() {
@@ -162,12 +164,17 @@ function abrirNotepad() {
   notepadWindow.style.display = 'block';
   notepadWindow.style.visibility = 'visible';
 }
+function abrirLixeira() {
+  document.getElementById('trashWindow').style.display = 'block';
 
+}
 
-function abrirPlayerMusica() {
-  const musicWindow = document.getElementById('musicPlayerWindow');
-  musicWindow.style.display = 'block';
-  musicWindow.style.visibility = 'visible';
+function limparLixeira() {
+  const sound = new Audio('./src/music/lixo (mp3cut.net).mp3');
+  sound.play();
+  const trashContent = document.getElementById('trashContent');
+  trashContent.innerHTML = '<p>Lixeira vazia</p>';
+
 }
 
 // Funções para controle de música
@@ -188,14 +195,12 @@ function stopMusic() {
   audioPlayer.currentTime = 0;
 }
 
-// Atualiza a barra de progresso
 audioPlayer.addEventListener('timeupdate', () => {
   const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
   progressBar.value = progress;
   updateCurrentTime();
 });
 
-// Permite buscar um ponto na música
 function seekMusic(value) {
   const seekTime = (value / 100) * audioPlayer.duration;
   audioPlayer.currentTime = seekTime;
@@ -211,13 +216,14 @@ function updateCurrentTime() {
   currentTimeDisplay.textContent = `${currentMinutes}:${currentSeconds.toString().padStart(2, '0')} / ${durationMinutes}:${durationSeconds.toString().padStart(2, '0')}`;
 }
 
+
+
 // Controle de volume
 function setVolume(value) {
   audioPlayer.volume = value;
 }
 
 function abrirNotepad1() {
-  // Exibir a janela do Bloco de Notas
   document.getElementById('notepadWindow1').style.display = 'block';
 }
 
@@ -228,25 +234,20 @@ function minimizar(id) {
 
 function fechar(id) {
   const janela = document.getElementById(id);
-  janela.style.display = 'none';  // Em vez de remover, estamos ocultando
+  janela.style.display = 'none';  
 }
 
 function mostrarInfo() {
-  // Obter o navegador
   const navegador = navigator.userAgent;
 
-  // Obter o sistema operacional
   const sistemaOperacional = navigator.platform;
 
-  // Exibir a janela de informações
   const infoWindow = document.getElementById('infoWindow');
   infoWindow.style.display = 'block';
 
-  // Mostrar as informações
   document.getElementById('navegador').innerText = navegador;
   document.getElementById('sistemaOperacional').innerText = sistemaOperacional;
 
-  // Verificar se a geolocalização está disponível
   if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(function(position) {
           const latitude = position.coords.latitude;
@@ -260,7 +261,6 @@ function mostrarInfo() {
   }
 }
 
-// Fechar a janela de informações
 function fecharInfo() {
   const infoWindow = document.getElementById('infoWindow');
   infoWindow.style.display = 'none';
@@ -297,9 +297,8 @@ function desligarSistema() {
 
   document.body.appendChild(overlay);
 
-  // Criando o elemento de áudio
   const audio = new Audio('./src/music/Iframe Som de desligamento do Windows 98 [xNhwSxgGDBg] (mp3cut.net) (1).mp3'); // Caminho para o seu áudio
-  audio.play(); // Toca o áudio quando a função for chamada
+  audio.play();
 
   setTimeout(() => {
     location.reload();
@@ -312,3 +311,31 @@ document.querySelector('.start-button a[href="#"]').addEventListener('click', (e
     desligarSistema();
   }
 });
+
+
+
+function mostrarConfig() {
+  document.getElementById('configWindow').style.display = 'block';
+}
+
+function fecharConfig() {
+  document.getElementById('configWindow').style.display = 'none';
+}
+
+function aplicarConfig() {
+  const titleBarColor = document.getElementById('title-bar-color').value;
+  const windowColor = document.getElementById('window-color').value;
+  const fontColor = document.getElementById('font-color').value;
+  const fontFamily = document.getElementById('font-family').value;
+  const fontSize = document.getElementById('font-size').value;
+
+  document.documentElement.style.setProperty('--title-bar-color', titleBarColor);
+  document.documentElement.style.setProperty('--window-color', windowColor);
+  document.documentElement.style.setProperty('--font-color', fontColor);
+  document.documentElement.style.setProperty('--font-family', fontFamily);
+  document.documentElement.style.setProperty('--font-size', fontSize); // Aplica o tamanho da fonte
+
+  document.body.style.fontSize = fontSize; // Pode ser ajustado para afetar partes específicas
+
+  fecharConfig();
+}
