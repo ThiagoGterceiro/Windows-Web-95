@@ -88,7 +88,7 @@ document.addEventListener('click', (event) => {
     }
 });
 
-setInterval(loopGifsAleatorios, 3000);
+setInterval(loopGifsAleatorios, 4000);
 iniciarMensagens();
 
 let assistenteVisivel = true;
