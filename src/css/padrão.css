@@ -8,12 +8,20 @@ body {
   background-color: #008080;
   color: #000;
   margin: 0;
-  cursor: url('../img/mouse/handno-ezgif.com-ani-to-apng-converter.cur'), auto;
   padding: 0;
   width: 1280px; /* Largura fixa */
   height: 800px; /* Altura fixa */
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Impede que a página tenha barras de rolagem */
+  overflow: hidden; 
+}
+
+html{
+  cursor: url('../img/mouse/handno-ezgif.com-ani-to-apng-converter.cur'), auto;
+
+}
+
+.cursorwait{
+  cursor: url('../img/mouse/hourgla2_st.cur'), auto;        
 
 }

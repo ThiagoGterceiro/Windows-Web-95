@@ -19,8 +19,6 @@
 }
 
 
-
-
 .title-bar {
   background: linear-gradient(to bottom, #000080, #0000A0);
   color: #FFF;
@@ -48,10 +46,11 @@
   box-shadow: 2px 2px #FFFFFF, -1px -1px #404040;
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   cursor: url('../img/mouse/harrow.cur'), auto;
-
+  touch-action: manipulation;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100;
 }
 
 .title-bar button:hover {
@@ -140,6 +139,7 @@
   width: 80px;
   height: 100px;
   text-align: center;
+  left: 15px;
   padding: 15px;
   background-color: transparent;
   display: flex;
@@ -217,6 +217,7 @@ a:active {
   color: #0000A0;
   box-shadow: 2px 2px #FFFFFF, -1px -1px #404040;
   text-decoration: none;
+  z-index: 100;
 }
 
 .button-95:hover {
@@ -250,4 +251,17 @@ a:active {
   }
 }
 
-
+@media (max-width: 600px) {
+  .window {
+    width: 95% !important;
+    height: auto;
+    left: 2.5%;
+    top: 5%;
+  }
+  .student-card {
+    width: 100%;
+  }
+  .site-photo {
+    height: auto;
+  }
+}
